@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { TopPage } from "./features/top";
-import { SettingsPage } from "./features/settings";
 import { IoSettings } from "react-icons/io5";
+import { SettingsPage } from "./features/settings";
+import { TopPage } from "./features/top";
 
 function App() {
   const [mainContent, setMainContent] = useState<React.ReactNode>(<TopPage />);
-
   const onChangeMainContent = (content: React.ReactNode) => {
     if (!mainContent === content) {
       setMainContent(content);
@@ -24,7 +23,6 @@ function App() {
               Template WXT
             </span>
           </div>
-
           <div className="p-2 flex justify-end flex-grow">
             <button onClick={() => onChangeMainContent(<SettingsPage />)}>
               <IoSettings
