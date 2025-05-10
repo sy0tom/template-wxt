@@ -4,7 +4,7 @@ import { UserSettings } from "#/types";
 export function createUserSettingsService(
   userSettingsRepository: IUserSettingsRepository,
 ) {
-  const getSettings = () => {
+  const getSettings = async (): Promise<UserSettings | null> => {
     return userSettingsRepository.get();
   };
   return {
