@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoSettings } from "react-icons/io5";
-import { SettingsPage } from "./features/settings";
-import { TopPage } from "./features/top";
+import { SettingsPage, TopPage } from "./pages";
 
 function App() {
   const [mainContent, setMainContent] = useState<React.ReactNode>(<TopPage />);
