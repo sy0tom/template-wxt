@@ -1,33 +1,39 @@
-import { useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
-import './App.css';
+import { useState } from "react";
+import { TopPage } from "./features/top";
+import { SettingsPage } from "./features/settings";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [mainContent, setMainContent] = useState<React.ReactNode>(<TopPage />);
+
+  const onChangeMainContent = (content: React.ReactNode) => {
+    if (!mainContent === content) {
+      setMainContent(content);
+    }
+  };
 
   return (
     <>
-      <div>
-        <a href="https://wxt.dev" target="_blank">
-          <img src={wxtLogo} className="logo" alt="WXT logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>WXT + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
+      <header>
+        <div className="w-full h-12 bg-blue-950 flex items-center justify-center">
+          <div
+            onClick={() => onChangeMainContent(<TopPage />)}
+            className="flex items-center"
+          >
+            <span className="p-2 text-2xl font-sans font-bold text-white">
+              Template WXT
+            </span>
+          </div>
+
+          <div className="p-2 flex justify-end flex-grow">
+            <button onClick={() => onChangeMainContent(<SettingsPage />)}>
+              settings
+            </button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div className="p-2">{mainContent}</div>
+      </main>
     </>
   );
 }
