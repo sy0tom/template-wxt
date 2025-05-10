@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TopPage } from "./features/top";
 import { SettingsPage } from "./features/settings";
+import { IoSettings } from "react-icons/io5";
 
 function App() {
   const [mainContent, setMainContent] = useState<React.ReactNode>(<TopPage />);
@@ -26,7 +27,10 @@ function App() {
 
           <div className="p-2 flex justify-end flex-grow">
             <button onClick={() => onChangeMainContent(<SettingsPage />)}>
-              settings
+              <IoSettings
+                size={32}
+                className="text-white hover:text-gray-300"
+              />
             </button>
           </div>
         </div>
