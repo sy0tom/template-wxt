@@ -6,6 +6,9 @@ import { defineConfig, WxtViteConfig } from "wxt";
 export default defineConfig({
   modules: ["@wxt-dev/module-react"],
   entrypointsDir: "entrypoints/apps",
+  manifest: {
+    permissions: ["storage"],
+  },
   vite: (): WxtViteConfig | Promise<WxtViteConfig> => ({
     plugins: [tailwindcss()],
     resolve: {

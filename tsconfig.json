@@ -24,10 +24,5 @@
     }
   },
   "include": ["./**/*", "./.wxt/wxt.d.ts"],
-  "exclude": [
-    "./.output",
-    "./node_modules/",
-    "./wxt.config.ts",
-    "./entrypoints/types/*"
-  ]
+  "exclude": ["./.output", "./node_modules/", "./wxt.config.ts"]
 }
