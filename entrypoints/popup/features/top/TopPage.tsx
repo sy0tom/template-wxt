@@ -1,7 +1,12 @@
-import React from "react";
+import { Button } from "#/components/ui/button";
 
 function TopPage() {
-  return <div>TopPage</div>;
+  return (
+    <>
+      <div>TopPage</div>
+      <Button>hello</Button>
+    </>
+  );
 }
 
 export default TopPage;
