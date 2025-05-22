@@ -15,7 +15,8 @@
     "postinstall": "wxt prepare",
     "lint": "eslint entrypoints",
     "lint:fix": "eslint entrypoints --fix",
-    "format": "prettier --write entrypoints"
+    "format": "prettier --write entrypoints",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^19.1.0",
@@ -32,10 +33,18 @@
     "eslint": "^9.27.0",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.0.0",
     "prettier-plugin-organize-imports": "^4.1.0",
     "tailwindcss": "^4.1.7",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1",
     "wxt": "^0.20.6"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }
